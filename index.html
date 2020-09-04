@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adwaits</title>
+
+    <!-- Googke Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;600&display=swap" rel="stylesheet" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="full-page-scroll.css" />
+    
+</head>
+
+<body>
+    <div id="main" class="container scroll-container">
+        <section class="section1">
+            <div class="brand">
+                <img class="logo" src="./Images/ADWAITS Logo.png" alt="Adwaits logo" />
+            </div>
+            <h1>
+                Welcome to the world of designing.
+            </h1>
+            <div class="footer">
+                <div class="left">
+                    <p><span class="semi">Client: </span>ABC pvt. Ltd.</p>
+                </div>
+                <div class="right">
+                    <p><span class="semi">Project focus: </span>UX Design, Visual Design and Web</p>
+                </div>
+            </div>
+        </section>
+        <section class="section2">
+            <div class="laptop">
+                <img class="laptop-img" src="./Images/Laptop Skin.png" alt="Laptop Skin" />
+            </div>
+            <video height="195px" autoplay controls>
+                <source src="Laptop Screen Video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+    </div>
+
+
+    <!-- script -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="full-page-scroll.js"></script>
+    <script>
+
+        // Smooth scroll activator
+        new fullScroll({
+            mainElement: "main",
+            displayDots: true,
+            dotsPosition: "left",
+            animateTime: 0.7,
+            animateFunction: "ease",
+        });
+
+        // Animation class adder
+        window.addEventListener('hashchange', function(e){
+            let hash = location.hash;
+            if(hash === "#1"){
+                $('video').addClass("onScroll");
+            }
+            else{
+                $('video').removeClass("onScroll");
+            }
+        });
+
+        
+    </script>
+</body>
+
+</html>
